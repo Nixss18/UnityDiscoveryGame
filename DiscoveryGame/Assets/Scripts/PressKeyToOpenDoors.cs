@@ -10,8 +10,11 @@ public class PressKeyToOpenDoors : MonoBehaviour
   public bool Action = false;
   public bool opened, locked; //nosaka vai durvim vajag atslegu
 
+  public static bool keyFound; //ja atrod atslēgu
+
   void Start(){
       Instruction.SetActive(false);
+      keyFound = false;
   }
 
   void OnTriggerEnter(Collider collision){
@@ -30,6 +33,9 @@ public class PressKeyToOpenDoors : MonoBehaviour
   }
 
   void Update(){
+       if(keyFound == true){
+                locked = false;
+            }
       if(locked == false){
         if(Input.GetKeyDown(KeyCode.E)){
             if(Action == true){
@@ -38,6 +44,7 @@ public class PressKeyToOpenDoors : MonoBehaviour
                 Trigger.SetActive(false);
                 Action = false;
             }
+           
         }
       }
   }
