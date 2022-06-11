@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Door
+  - Key
+  - MonsterTrigger
+  - MonsterTrigger2
+  - KeyAndActivateMonster
+  - DisableMonsterChase
+  - KeyAndActivateMonster2
+  - DisableMonsterTriggerChase2
+  - LastDoors
   layers:
   - Default
   - TransparentFX

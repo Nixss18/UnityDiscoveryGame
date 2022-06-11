@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 4c1d2b207c790e946b0a650a1b5870f1
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 6be6ba07888c2aa46b6f3b5287bef95e
+  - enabled: 1
+    path: Assets/Scenes/Jumpscare.unity
+    guid: c4a0e75156a268d49a67fe59468c6aa1
   m_configObjects: {}

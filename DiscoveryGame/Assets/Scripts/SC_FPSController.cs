@@ -21,6 +21,16 @@ public class SC_FPSController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    public int KeyAmount;
+
+    public AudioSource sfx;
+
+    public AudioSource monsterChaseSfx;
+
+    public GameObject monster;
+    public GameObject monster2;
+
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -69,6 +79,32 @@ public class SC_FPSController : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other){ //atslegu skaits
+        if(other.tag == "Key"){
+            sfx.Play();
+            KeyAmount += 1;
+            Destroy(other.gameObject);
+        }
+        else if(other.tag == "KeyAndActivateMonster"){ //aktivizē ka monstrs ķer speletaju
+            monsterChaseSfx.Play();
+            KeyAmount +=1;
+            Destroy(other.gameObject);
+            monster.SetActive(true);
+        }
+        else if(other.tag == "KeyAndActivateMonster2"){ //aktivizē ka monstrs ķer speletaju
+            monsterChaseSfx.Play();
+            KeyAmount +=1;
+            Destroy(other.gameObject);
+            monster2.SetActive(true);
+        }
+        else if(other.tag == "DisableMonsterChase"){ //ja ieiet triggeri DisableMonsterChase izsledz monstru
+            monster.SetActive(false);
+        }
+        else if(other.tag == "DisableMonsterTriggerChase2"){ //ja ieiet triggeri DisableMonsterChase izsledz monstru
+            monster2.SetActive(false);
         }
     }
 }
