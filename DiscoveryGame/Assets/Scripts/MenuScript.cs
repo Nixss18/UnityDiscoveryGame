@@ -8,10 +8,10 @@ public class MenuScript : MonoBehaviour
     public string scene;
     void Update(){
         if(Input.GetKey(KeyCode.L)){
-            SceneManager.LoadScene(scene);
+            SceneManager.LoadScene(scene); //uzsāk spēli
         }
         if(Input.GetKey(KeyCode.Escape)){
-            Application.Quit();
+            Application.Quit(); //iziet ārā no spēles
         }
     }
 }

@@ -9,7 +9,7 @@ public class jumpscare : MonoBehaviour
 
     void OnTriggerEnter(Collider other){
         if(other.CompareTag("Player")){
-            SceneManager.LoadScene(scene);
+            SceneManager.LoadScene(scene); //ja speletajs ienak monstra triggeri attelo death scene
         }
     }
 }
